@@ -1,0 +1,3 @@
+C:/Users/freij/OneDrive/Documents/MazeEscapeDFS/cmake-build-debug/CMakeFiles/MazeEscapeDFS.dir
+C:/Users/freij/OneDrive/Documents/MazeEscapeDFS/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/freij/OneDrive/Documents/MazeEscapeDFS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
