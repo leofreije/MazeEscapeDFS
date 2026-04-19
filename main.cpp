@@ -114,13 +114,24 @@ void printPath(pair<int,int> exitcell,
 }
 
 // ----------------------------------------------------------
-// STUDENTS IMPLEMENT DFS HERE
-// Add arguments, return type, and logic
-// ----------------------------------------------------------
-// bool dfs(……) {
-//     // Your code here
-//     test
-// }
+// // STUDENTS IMPLEMENT DFS HERE
+// // Add arguments, return type, and logic
+// // ----------------------------------------------------------
+bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited, vector<vector<int>>& parent_r, vector<vector<int>>& parent_c, int exit_r, int exit_c) {
+    //Pseudocode:
+    //If out of bounds, cell is a wall, or already visited return false
+    //If current cell is the exit return true
+
+    //Mark current cell as visited
+
+    //Try all 4 directions using dr and dc direction arrays.
+    //find next row and column (2D array)
+    //Set parent of next call to current call
+    //Call DFS recursively on next cell
+    //If recursive call returns true, return true
+
+    return false;
+}
 
 
 // ----------------------------------------------------------
