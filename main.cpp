@@ -1,5 +1,6 @@
 //
 // Created by Manju Muralidharan on 11/22/25.
+// Edited by Leo Freije on 4/17/2026
 //
 
 #include <iostream>
@@ -120,7 +121,14 @@ void printPath(pair<int,int> exitcell,
 bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited, vector<vector<int>>& parent_r, vector<vector<int>>& parent_c, int exit_r, int exit_c) {
     //Pseudocode:
     //If out of bounds, cell is a wall, or already visited return false
+    if (r < 0 || r >= maze.size() || c < 0 || c >= maze[0].size() || maze[r][c] == 1 || visited[r][c]) {
+        return false;
+    }
+
     //If current cell is the exit return true
+    if (r == exit_r && c == exit_c) {
+        return true;
+    }
 
     //Mark current cell as visited
 
