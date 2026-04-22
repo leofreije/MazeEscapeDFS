@@ -131,6 +131,7 @@ bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited,
     }
 
     //Mark current cell as visited
+    visited[r][c] = true;
 
     //Try all 4 directions using dr and dc direction arrays.
     //find next row and column (2D array)
