@@ -134,7 +134,16 @@ bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited,
     visited[r][c] = true;
 
     //Try all 4 directions using dr and dc direction arrays.
-    //find next row and column (2D array)
+    //int dr[4] = {-1, 0, 1, 0};
+    //int dc[4] = {0, 1, 0, -1};
+
+    for (int i = 0; i < 4; i++) {
+        int next_r = r + dr[i];
+        int next_c = c + dc[i];
+
+    }
+
+    //find next row and column
     //Set parent of next call to current call
     //Call DFS recursively on next cell
     //If recursive call returns true, return true
