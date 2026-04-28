@@ -138,16 +138,20 @@ bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited,
     //int dc[4] = {0, 1, 0, -1};
 
     for (int i = 0; i < 4; i++) {
+        //find next row and column
         int next_r = r + dr[i];
         int next_c = c + dc[i];
 
+        //check that next row and column are valid
+        if (!(next_r < 0 || next_r >= maze.size() || next_c < 0 || next_c >= maze[0].size() || maze[next_r][next_c] == 1 || visited[next_r][next_c])) {
+            //Set parent of next call to current call
+            parent_r[next_r][next_c] = r;
+            parent_c[next_r][next_c] = c;
+        }
+
+        //Call DFS recursively on next cell
+        //If recursive call returns true, return true
     }
-
-    //find next row and column
-    //Set parent of next call to current call
-    //Call DFS recursively on next cell
-    //If recursive call returns true, return true
-
     return false;
 }
 
