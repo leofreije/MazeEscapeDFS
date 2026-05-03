@@ -147,10 +147,12 @@ bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited,
             //Set parent of next call to current call
             parent_r[next_r][next_c] = r;
             parent_c[next_r][next_c] = c;
-        }
 
-        //Call DFS recursively on next cell
-        //If recursive call returns true, return true
+            //Call DFS recursively on next cell and if recursive call returns true, return true
+            if (dfs(next_r, next_c, maze, visited, parent_r ,parent_c, exit_r, exit_c)) {
+                return true;
+            }
+        }
     }
     return false;
 }
