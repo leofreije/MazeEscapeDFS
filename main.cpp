@@ -119,23 +119,19 @@ void printPath(pair<int,int> exitcell,
 // // Add arguments, return type, and logic
 // // ----------------------------------------------------------
 bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited, vector<vector<int>>& parent_r, vector<vector<int>>& parent_c, int exit_r, int exit_c) {
-    //Pseudocode:
-    //If out of bounds, cell is a wall, or already visited return false
+
+    //check base cases
     if (r < 0 || r >= maze.size() || c < 0 || c >= maze[0].size() || maze[r][c] == 1 || visited[r][c]) {
         return false;
     }
 
-    //If current cell is the exit return true
+    //check if current cell is the exit
     if (r == exit_r && c == exit_c) {
         return true;
     }
 
-    //Mark current cell as visited
+    //mark current cell as visited
     visited[r][c] = true;
-
-    //Try all 4 directions using dr and dc direction arrays.
-    //int dr[4] = {-1, 0, 1, 0};
-    //int dc[4] = {0, 1, 0, -1};
 
     for (int i = 0; i < 4; i++) {
         //find next row and column
@@ -144,11 +140,11 @@ bool dfs(int r, int c, vector<vector<int>>& maze, vector<vector<bool>>& visited,
 
         //check that next row and column are valid
         if (!(next_r < 0 || next_r >= maze.size() || next_c < 0 || next_c >= maze[0].size() || maze[next_r][next_c] == 1 || visited[next_r][next_c])) {
-            //Set parent of next call to current call
+            //parent tracking
             parent_r[next_r][next_c] = r;
             parent_c[next_r][next_c] = c;
 
-            //Call DFS recursively on next cell and if recursive call returns true, return true
+            //recursive call
             if (dfs(next_r, next_c, maze, visited, parent_r ,parent_c, exit_r, exit_c)) {
                 return true;
             }
